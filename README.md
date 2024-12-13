@@ -26,7 +26,7 @@ This repository contains a Python-based pipeline designed to streamline the down
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/deg-analysis-pipeline.git
+   git clone https://github.com/hannahfryer/TopDEG-pipeline.git
    cd deg-analysis-pipeline
    ```
 
