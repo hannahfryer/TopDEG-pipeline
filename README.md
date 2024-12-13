@@ -67,7 +67,7 @@ The following files will be generated:
 
 1. Run the pipeline:
    ```bash
-   python TopDEG-pipeline.py --input DEG_results.csv
+   python TopDEG-pipeline.py 
    ```
 
 2. Outputs:
