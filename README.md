@@ -65,20 +65,12 @@ The following files will be generated:
 
 ## Example
 
-1. Input CSV (`deg_results.csv`):
-   ```csv
-   gene_name,log2_fold_change,p_value
-   GeneA,2.5,0.001
-   GeneB,-1.8,0.05
-   ...
-   ```
-
-2. Run the pipeline:
+1. Run the pipeline:
    ```bash
-   python deg_analysis_pipeline.py --input deg_results.csv
+   python TopDEG-pipeline.py --input DEG_results.csv
    ```
 
-3. Outputs:
+2. Outputs:
    - `volcano_plot.html`
    - `top_100_degs.csv`
    - `top_100_gene_ids.csv`
