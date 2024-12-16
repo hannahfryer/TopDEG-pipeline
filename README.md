@@ -5,28 +5,33 @@ gene annotations, and identifying KEGG Orthology (KO) assignments.
 
 ## Features
 
-1. **Interactive Volcano Plot**
-   - Visualize DEGs with an interactive volcano plot.
-   - Adjust thresholds for significance directly in the interface.
+1. **Interactive Volcano Plot**:
+   - Visualize DEGs with thresholds for log2 fold change and adjusted p-value.
+   - Easily identify upregulated, downregulated, and non-significant genes.
 
-2. **Top DEG Selection**
-   - Automatically ranks DEGs based on log2 fold change.
-   - Outputs the top 100 DEGs into a CSV file for further analysis.
+2. **Gene Ranking**:
+   - Rank genes by their log2 fold change and extract the top 100 genes for downstream analysis.
 
-3. **NCBI Gene ID Retrieval**
-   - Queries NCBI to fetch gene IDs and metadata for the top DEGs.
-   - Retrieves gene descriptions, genomic locations, and other relevant details.
+3. **Gene Annotation**:
+   - Query NCBI databases to retrieve gene information and functional annotations for Pisum sativum (pea).
 
-4. **KEGG Orthology (KO) Search**
-   - Searches KEGG database for KO terms using the retrieved gene IDs.
-   - Outputs results for pathway analysis.
+4. **KEGG KO Assignment Check**:
+   - Identify KEGG Orthology assignments for genes using KEGG database queries.
 
-## Installation
+5. **Output Generation**:
+   - Save significant genes, ranked genes, and annotated gene information to CSV files for further analysis.
+  
+## Requirements
+Install the following Python libraries before running the script: 
+```bash
+pip install pandas plotly numpy biopython beautifulsoup4 requests
 
-1. Clone the repository:
+## OR:
+
+Clone the repository:
    ```bash
-   git clone https://github.com/hannahfryer/TopDEG-pipeline.git
-   cd TopDEG-pipeline
+   git clone https://github.com/hannahfryer/DEGExplorer.git
+   cd DEGExplorer
    ```
 
 2. Install dependencies:
@@ -37,15 +42,16 @@ gene annotations, and identifying KEGG Orthology (KO) assignments.
 ## Usage
 
 ### Input
-Prepare a CSV file containing DEG analysis results with the following columns:
-- `gene_name`
-- `log2_fold_change`
-- `p_value`
+If NOT using data supplied in this repository, ensure your input CSV file (DEG_results.csv) contains the following columns:
+- gene (gene identifiers)
+- lof2FoldChange (log2 fold changes)
+- pvalue (p-values)
+- padj (adjusted p-values)
 
 ### Running the Script
 Run the script with the DEG results file as input:
 ```bash
-python TopDEG-pipeline.py --input DEG_results.csv
+python DEGExplorer.py --input DEG_results.csv
 ```
 
 ### Output
