@@ -27,7 +27,7 @@ This repository contains a Python-based pipeline designed to streamline the down
 1. Clone the repository:
    ```bash
    git clone https://github.com/hannahfryer/TopDEG-pipeline.git
-   cd deg-analysis-pipeline
+   cd TopDEG-pipeline
    ```
 
 2. Install dependencies:
@@ -46,7 +46,7 @@ Prepare a CSV file containing DEG analysis results with the following columns:
 ### Running the Script
 Run the script with the DEG results file as input:
 ```bash
-python deg_analysis_pipeline.py --input <deg_results.csv>
+python TopDEG-pipeline.py --input DEG_results.csv
 ```
 
 ### Output
@@ -96,10 +96,3 @@ pip install -r requirements.txt
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## Contributions
-Contributions are welcome! Please fork the repository and submit a pull request.
-
-## Contact
-For questions or issues, please create an issue in the repository or email `your_email@example.com`.
-
