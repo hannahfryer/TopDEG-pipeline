@@ -1,8 +1,7 @@
-# TopDEG-pipeline
+## DEGExplorer: : Visualising and Annotating Top Genes
 
-# DEG Analysis and Functional Annotation Pipeline
-
-This repository contains a Python-based pipeline designed to streamline the downstream analysis of differential gene expression (DEG) data. The script provides an interactive volcano plot, ranks DEGs based on log2 fold change, retrieves gene IDs and metadata from NCBI, and searches for KEGG Orthology (KO) terms for pathway analysis.
+This repository contains a Python-based pipeline designed for the processing, visualising, and annotating differential gene expression (DEG) data. The steps include generating volcano plots, ranking DEGs, retrieving
+gene annotations, and identifying KEGG Orthology (KO) assignments. 
 
 ## Features
 
