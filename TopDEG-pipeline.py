@@ -74,9 +74,6 @@ significant_genes.to_csv("significant_genes.csv", index=False)
 # Display a message
 print(f"List of significant genes saved to 'significant_genes.csv'.")
 
-
-import pandas as pd
-
 # Load your CSV file (replace with your actual file path)
 csv_file_path = "DEG_results.csv"  # Replace with your file path
 data = pd.read_csv(csv_file_path)
@@ -103,7 +100,6 @@ top_100_genes.to_csv('top_100_genes.csv', index=False)
 
 
 from Bio import Entrez
-import pandas as pd
 
 # Set your email address (required by NCBI)
 Entrez.email = "your-email@example.com"
@@ -179,7 +175,6 @@ print("The gene details have been saved to 'top_100_gene_details.csv'.")
 
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 import csv
 
 def check_kegg_ko(gene_id):
