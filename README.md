@@ -61,13 +61,6 @@ The following files will be generated:
 - `top_100_gene_ids.csv`: Gene IDs and metadata from NCBI.
 - `kegg_results.csv`: KEGG Orthology search results.
 
-## Workflow
-
-1. **Prepare DEG Results**: Ensure input CSV contains `gene_name`, `log2_fold_change`, and `p_value` columns.
-2. **Visualize with Volcano Plot**: Use the interactive HTML file to explore significant DEGs.
-3. **Retrieve Gene IDs**: Generate a CSV with NCBI metadata for the top 100 DEGs.
-4. **KEGG Search**: Use the KO terms from the output for pathway analysis.
-
 ## Example
 
 1. Run the pipeline:
@@ -81,18 +74,7 @@ The following files will be generated:
    - `top_100_gene_ids.csv`
    - `kegg_results.csv`
 
-## Dependencies
-- Python 3.8+
-- pandas
-- matplotlib
-- plotly
-- Biopython
-- Requests
 
-Install dependencies with:
-```bash
-pip install -r requirements.txt
-```
 
 ## Limitations
 - The KEGG search may not return KO terms for all genes.
