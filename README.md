@@ -3,6 +3,11 @@
 This repository contains a Python-based pipeline designed for the processing, visualising, and annotating differential gene expression (DEG) data. The steps include generating volcano plots, ranking DEGs, retrieving
 gene annotations, and identifying KEGG Orthology (KO) assignments. 
 
+
+To run:
+
+1. Download all python scripts in this repositery along with the example 'DEG_results.csv" into a single directory
+
 ## Features
 
 1. **Interactive Volcano Plot**:
