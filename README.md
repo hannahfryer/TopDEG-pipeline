@@ -119,14 +119,13 @@ The following file will be generated:
 ---
 
 ### Notes
-- Replace `--input <file>` with the appropriate file path if your data files are located elsewhere.
-- Ensure your input files are correctly formatted and match the expected structure for each script.  
-- Adjust thresholds and parameters in the scripts to fit your analysis needs.
+- If not using sample data, ensure your input files ( DEG_results.csv) is formatted correctly and contain the necessary columns required by the scripts.
+- For organism-specific scripts, double-check that variables `"prefix"`and `"organism_name"` match your dataset.
 
 ## Limitations
 - The KEGG search may not return KO terms for all genes.
 - Accuracy of gene ID retrieval depends on input data quality.
-- Assumes properly formatted DEG input file.
+- Assumes properly formatted input from prior DESeq2 analysis .
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
