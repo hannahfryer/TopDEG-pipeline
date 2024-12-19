@@ -46,6 +46,16 @@ If you are not using the sample data provided in this repository, ensure your in
 
 ### **1. DEG Analysis and Interactive Volcano Plot**
 
+#### Adjusting significance threshold
+
+Before running the script, you can edit the significance thresholds of... to make more or less stringent depending on your analysis 
+
+By default, it is set to:
+
+```python
+organism_name = "Pisum sativum"
+```
+
 #### Running the Script
 Run the script with your DEG results file (`DEG_results.csv`) as input:
 ```bash
