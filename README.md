@@ -99,9 +99,14 @@ The following files will be generated:
 - **`top_100_gene_details.csv`**: Detailed metadata for the top 100 genes retrieved from the NCBI Gene database.
 
 ### **3. KEGG KO Assignment Checker**
----
+Before running the script, make sure to update the `prefix` variable to match the organism in your dataset. 
+```
 prefix = "psat"
----
+```
+```python
+prefix = "ath"  # For Arabidopsis
+prefix = "hsa"  # For humans
+```
 
 #### Running the Script
 Run the script with the gene details file (`top_100_gene_details.csv`) as input:
