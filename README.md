@@ -44,12 +44,6 @@ If you are not using the sample data provided in this repository, ensure your in
 - **`pvalue`**: Raw p-values representing the statistical significance of the differential expression.  
 - **`padj`**: Adjusted p-values  
 
-
-
-Here's an updated version of the "Running the Script" and "Output" section for each script in the repository, tailored to their specific functionalities:
-
----
-
 ### **1. DEG Analysis and Interactive Volcano Plot**
 
 #### Running the Script
