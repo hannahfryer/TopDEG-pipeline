@@ -49,9 +49,9 @@ If you are not using the sample data provided in this repository, ensure your in
 #### Adjusting Significance Threshold
 
 
-Before running the script, you can customize the adjusted p-value significance threshold (`padj_threshold`) to suit your analysis needs. This allows you to make the threshold more or less stringent depending on the specific requirements of your study.
+Before running the script, you can customize the adjusted p-value significance threshold (`padj_threshold`) to suit your analysis needs. This allows you to make the threshold more or less stringent depending on the specific requirements of your study. 
 
-By default, the threshold is set to:
+Open the interactive_volcano_plot.py and locate the following line. By default, the threshold is set to:
 
 ```
 padj_threshold = 0.05
@@ -60,7 +60,7 @@ padj_threshold = 0.05
 To adjust the threshold, modify the value in the script before running the analysis.
 
 #### Running the Script
-Run the script with your DEG results file (`DEG_results.csv`) as input:
+The script uses '`DEG_results.csv` automatically as input:
 ```bash
 python interactive_volcano_plot.py 
 ```
