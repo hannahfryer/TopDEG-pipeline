@@ -17,7 +17,7 @@ Queries the KEGG database to check if gene IDs have KEGG Orthology (KO) assignme
 Reads gene IDs from a CSV file, retrieves KO information, and saves the results to a new CSV file.
 
 #### Sample data
-The sample data is a CSV file containing DESeq2 analysis results from a study comparing drought and control conditions in Pisum sativum pod tissues. The goal is to visualise thses differentially expressed genes and find information about their function.
+The sample data (`DEG_results.csv`) is a CSV file containing DESeq2 analysis results from a study comparing drought and control conditions in Pisum sativum pod tissues. The goal is to visualise thses differentially expressed genes and find information about their function.
 
 ## Requirements
 - Python version 3.12.8 or higher
