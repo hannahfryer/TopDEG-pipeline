@@ -103,6 +103,7 @@ Before running the script, make sure to update the `prefix` variable to match th
 ```
 prefix = "psat"
 ```
+If you're using a different organism, replace "psat" with the scientific name of your organism. For example:
 ```python
 prefix = "ath"  # For Arabidopsis
 prefix = "hsa"  # For humans
