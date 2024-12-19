@@ -89,7 +89,6 @@ organism_name = "Arabidopsis thaliana"  # For Arabidopsis
 organism_name = "Homo sapiens"          # For humans
 ```
 #### Running the Script
-Run the script with your DEG results file (`DEG_results.csv`) as input:
 ```bash
 python significant_gene_info_retrieval.py 
 ```
