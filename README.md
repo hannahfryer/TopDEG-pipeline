@@ -16,7 +16,7 @@ Queries the KEGG database to check if gene IDs have KEGG Orthology (KO) assignme
 Reads gene IDs from a CSV file, retrieves KO information, and saves the results to a new CSV file.
 
 ## Requirements
-- Python version 3.8 or higher
+- Python version 3.12.8 or higher
 
 #### 1. Clone the Repository
 ```bash
