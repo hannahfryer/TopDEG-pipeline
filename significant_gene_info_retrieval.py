@@ -13,43 +13,10 @@
 # pip install pandas plotly numpy 
 
 import pandas as pd  # For reading and processing data in structured format
-
-# ------------------- Ranking Genes Based on Log Fold Change -------------------
-# Load CSV fule into a DataFrame
-csv_file_path = "significant_genes.csv"  # Replace with your file path and/or adjust name of input file
-data = pd.read_csv(csv_file_path)
-
-# Select relevant columns for analysis
-# Ensure the CSV contains columns for 'gene' and 'log2FoldChange' 
-data = data[['gene', 'log2FoldChange']]  # modify column names here if your file uses different names
-
-# Rank genes based on Log2 Fold Change
-# Genes with higher log2FoldChange values will receive a higher rank (descending order)
-data['Rank'] = data['log2FoldChange'].rank(ascending=False, method='min')
-
-# Sort the data by rank to ensure proper order
-ranked_data = data.sort_values(by='Rank', ascending=True)
-
-# Extract the top 100 genes based on rank
-top_100_genes = ranked_data.head(100) # Adjust number here if you want higher or lower amount of filtered genes
-
-# Display the top 100 genes to the console
-print("Top 100 genes ranked by Log2 Fold Change:")
-print(top_100_genes)
-
-# Save the top 100 genes to a new CSV file
-# This file will contain the genes with the highest Log2 Fold change values
-top_100_genes.to_csv('top_100_genes.csv', index=False)
-
-# Print a confirmation message to the user
-print("Top 100 genes saved to 'top_100_genes.csv")
-
-# -------------------- NCBI Email Configuration --------------------
-# Set your email address (required by NCBI to identify users)
-Entrez.email = "your-email@example.com"
+from Bio import Entrez # Importing Entrez module from Biopython for accessing NCBI databases
 
 # -------------------- Function Definition --------------------
-def search_gene_details(locus_tag):
+def search_gene_details(locus_tag, organism_name):
     """
     Search for gene details of a specific locus tag in the NCBI Gene database 
     for Pisum sativum (pea) and extract relevant gene information.
@@ -64,7 +31,7 @@ def search_gene_details(locus_tag):
     try:
         # Step 1: Search for the locus tag in the Gene database
         print(f"Searching for {locus_tag} in Pisum sativum...")
-        handle = Entrez.esearch(db="gene", term=f"{locus_tag}[Gene] AND Pisum sativum[Organism]", retmode="xml")
+        handle = Entrez.esearch(db="gene", term=f"{locus_tag}[Gene] AND [organism_name}[Organism]", retmode="xml")
         record = Entrez.read(handle)
         handle.close()
         
@@ -100,6 +67,39 @@ def search_gene_details(locus_tag):
         # Handle any errors that occur during the API request
         return f"Error fetching data for {locus_tag}: {e}"
 
+# ------------------- Ranking Genes Based on Log Fold Change -------------------
+# Load CSV fule into a DataFrame
+csv_file_path = "significant_genes.csv"  # Replace with your file path and/or adjust name of input file
+data = pd.read_csv(csv_file_path)
+
+# Select relevant columns for analysis
+# Ensure the CSV contains columns for 'gene' and 'log2FoldChange' 
+data = data[['gene', 'log2FoldChange']]  # modify column names here if your file uses different names
+
+# Rank genes based on Log2 Fold Change
+# Genes with higher log2FoldChange values will receive a higher rank (descending order)
+data['Rank'] = data['log2FoldChange'].rank(ascending=False, method='min')
+
+# Sort the data by rank to ensure proper order
+ranked_data = data.sort_values(by='Rank', ascending=True)
+
+# Extract the top 100 genes based on rank
+top_100_genes = ranked_data.head(100) # Adjust number here if you want higher or lower amount of filtered genes
+
+# Display the top 100 genes to the console
+print("Top 100 genes ranked by Log2 Fold Change:")
+print(top_100_genes)
+
+# Save the top 100 genes to a new CSV file
+# This file will contain the genes with the highest Log2 Fold change values
+top_100_genes.to_csv('top_100_genes.csv', index=False)
+
+# Print a confirmation message to the user
+print("Top 100 genes saved to 'top_100_genes.csv")
+
+# -------------------- NCBI Email Configuration --------------------
+# Set your email address (required by NCBI to identify users)
+Entrez.email = "your-email@example.com"
 
 # -------------------- Load Top 100 Genes --------------------
 # Load the list of top 100 genes from a CSV file
@@ -114,7 +114,7 @@ gene_details = []
 # Loop through each gene (locus tag) in the top 100 list
 for locus_tag in top_100_genes['gene']:
     # Fetch gene information using the 'search_pisum_sativum' function
-    gene_info = search_gene_details(locus_tag)
+    gene_info = search_gene_details(locus_tag, organism_name)
     
     # Check if valid gene information was returned
     if isinstance(gene_info, dict):
