@@ -1,11 +1,21 @@
-# ------------------------ Import Required Libraries ------------------------
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import csv
+# ---------------------------------------------------------------------------
+# Script: KEGG KO Assignment Checker
+# Description:
+# - Queries KEGG database to check if gene IDs have KEGG Orthology (KO) assignments.
+# - Processes gene IDs from a CSV file and retrieves KO information for each gene.
+# - Saves the results to a new CSV file for further analysis.
+# ---------------------------------------------------------------------------
+
+# -------------------------- Library Imports --------------------------
+# Ensure the necessary libraries are installed:
+
+import requests  # For sending HTTP requests to the KEGG website
+from bs4 import BeautifulSoup  # For parsing HTML content from KEGG pages
+import pandas as pd  # For reading and processing data in structured format
+import csv  # For writing results to a CSV file
+import re  # For using regular expressions to identify KEGG Orthology (KO) patterns
 
 # ------------------------ Function Definitions ------------------------
-
 import re  # Import regular expressions for pattern matching
 
 def check_kegg_ko(gene_id):
@@ -22,55 +32,61 @@ def check_kegg_ko(gene_id):
     url = f"https://www.genome.jp/entry/psat:{gene_id}"
     
     try:
-        # Send GET request to KEGG
+        # Send a GET request to retrieve the KEGG page
         response = requests.get(url)
         
         if response.status_code == 200:
-            # Parse the HTML content
+            # Parse the HTML content of the page
             soup = BeautifulSoup(response.content, 'html.parser')
             
             # Extract all the text content from the page
             page_text = soup.get_text(separator="\n", strip=True)
-
-            # Check for explicit "No KO assigned" text
-            if "no KO assigned" in page_text.lower():
-                return "No KO assigned"
 
             # Use a regular expression to find KO entries (format: KXXXXX)
             ko_matches = re.findall(r'\bK\d{5}\b', page_text)
 
             if ko_matches:
                 # Return all unique KO values as a comma-separated string
-                return ", ".join(set(ko_matches))
+                return ", ".join(set(ko_matches)) 
             else:
-                return "No KO assigned"
+                # Return a message if no KO is found
+                return "KO not assigned"
         else:
+            # Return an error message if the HTTP request fails
             return f"Error: Status code {response.status_code}"
     
     except Exception as e:
         return f"Error: {e}"
 
-# ------------------------ Main Script Execution ------------------------
+# --------------------- Main Script Execution ---------------------
 
-# Step 1: Load gene IDs from the input CSV file
-# Assume the file 'top_100_genes.csv' has a column named 'gene' containing gene IDs
-input_csv = 'top_100_genes.csv'  # Path to the input file
+#Load Gene IDs from CSV
+# Assuming 'top_100_gene_details.csv' contains a column named "Gene ID"
+input_csv = 'top_100_gene_details.csv'  # Path to your input file
 df = pd.read_csv(input_csv)
-gene_ids = df['gene'].tolist()  # Extract the 'gene' column as a list of gene IDs
 
-# Step 2: Check for KO assignments for each gene ID
-print("Checking KEGG KO assignments for gene IDs...")
-results = check_genes_for_ko(gene_ids)
+# Extract the list of Gene IDs from the DataFrame
+gene_ids = df['Gene ID'].tolist()
 
-# Step 3: Save the results to a new CSV file
-output_csv = 'gene_ko_results.csv'  # Path to the output file
-with open(output_csv, 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(["Gene ID", "KO Info"])  # Write the header row
-    
-    # Write each gene ID and its corresponding KO information
-    for gene_id, ko_info in results.items():
-        writer.writerow([gene_id, ko_info])
+# Query KEGG for KO assignments
+print("Checking KEGG KO assignments for Gene IDs...")
 
-# Print confirmation message
+# Create an empty list to store results
+results = []
+
+# Loop through each Gene ID and query KEGG
+for gene_id in gene_ids:
+    # Use the check_kegg_ko function to get KO info for each Gene ID
+    ko_info = check_kegg_ko(gene_id)
+
+    # Append the results to the list as a dictionary
+    results.append({"Gene ID": gene_id, "KO Info": ko_info})
+    print(f"Gene ID: {gene_id} - KO Info: {ko_info}")  # Print progress to console
+
+# Save Results to CSV
+output_csv = 'gene_ko_results.csv'  # Path to save the results
+results_df = pd.DataFrame(results)  # Convert results to DataFrame
+results_df.to_csv(output_csv, index=False)  # Save to CSV
+
+# Print a confirmation message upon successful completion
 print(f"Results saved to {output_csv}")
