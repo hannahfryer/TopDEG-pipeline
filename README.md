@@ -59,14 +59,8 @@ The following file will be generated:
 
 ---
 
-### **2. DEG Analysis and Gene Information Retrieval**
-## Setting the Organism Name
-
-Here’s a simpler version for the GitHub README:
-
----
-
-### Changing the Organism Name
+#### **2. DEG Analysis and Gene Information Retrieval**
+### Setting the Organism Name
 
 Before running the script, make sure to update the `organism_name` variable to match the organism in your dataset. 
 
