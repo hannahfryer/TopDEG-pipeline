@@ -8,7 +8,7 @@ Scripts:
 Processes DESeq2 results to identify significant genes based on adjusted p-values and log2 fold-change thresholds.
 Saves significant genes to a CSV file and creates an interactive volcano plot for visualization.
 
-2. significant_gene_details.py:
+2. significant_gene_info_retrieval.py:
 Processes DESeq2 results to rank genes by log2 fold change. Extracts the top 100 significant genes and queries the NCBI Gene database for Pisum sativum (pea) to retrieve gene details such as description, protein information, and functional annotations. Saves results to a new CSV file.
 
 3. KEGG_retriever.py:
@@ -64,7 +64,7 @@ The following file will be generated:
 #### Running the Script
 Run the script with the significant genes file (`significant_genes.csv`) as input:
 ```bash
-python gene_info_retrieval.py --input significant_genes.csv
+python significant_gene_info_retrieval.py --input significant_genes.csv
 ```
 
 #### Output
