@@ -3,7 +3,8 @@
 This repository contains scripts for analyzing differential gene expression (DEG) data, identifying significant genes, and annotating genes using external databases such as NCBI and KEGG. The scripts are designed to streamline the analysis and provide interactive visualization options, ranked gene lists, and functional annotations.  
 
 ## Repository Overview
-Scripts:
+#### Scripts
+
 1. interactive_volcano_plot.py:
 Processes DESeq2 results to identify significant genes based on adjusted p-values and log2 fold-change thresholds.
 Saves significant genes to a CSV file and creates an interactive volcano plot for visualization.
@@ -14,6 +15,8 @@ Ranks genes by log2 fold change. Extracts the top 100 significant genes and quer
 3. kegg_ko_checker.py:
 Queries the KEGG database to check if gene IDs have KEGG Orthology (KO) assignments.
 Reads gene IDs from a CSV file, retrieves KO information, and saves the results to a new CSV file.
+
+#### Sample data
 
 ## Requirements
 - Python version 3.12.8 or higher
