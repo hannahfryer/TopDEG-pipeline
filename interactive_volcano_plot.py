@@ -12,6 +12,8 @@ import pandas as pd  # For data manipulation and analysis
 import numpy as np  # For numerical computations and data processing
 import plotly.express as px  # For creating interactive plots
 
+# -------------------------- Edit padj variable ----------------------------
+padj_threshold = 0.05 # Adjusted p-value threshold for statistical significance. Can change this if you want to make more stringent or less strict
 # -------------------------- Data Loading ----------------------------
 
 # Load DESeq2 results (example format)
@@ -27,7 +29,6 @@ data = data.dropna(subset=["padj"])
 ## Add a significance column based on thresholds
 # Define thresholds for significance testing
 log2_fc_threshold = 1.0 # Log2 fold-change threshold for up/downregulation
-padj_threshold = 0.05 # Adjusted p-value threshold for statistical significance. Can change this if you want to make more stringent or less strict
 
 # Creates a new column to classify gene expression significance
 data["significance"] = "Not Significant"
