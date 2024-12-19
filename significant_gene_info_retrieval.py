@@ -31,7 +31,7 @@ def search_gene_details(locus_tag, organism_name):
     try:
         # Step 1: Search for the locus tag in the Gene database
         print(f"Searching for {locus_tag} in Pisum sativum...")
-        handle = Entrez.esearch(db="gene", term=f"{locus_tag}[Gene] AND [organism_name}[Organism]", retmode="xml")
+        handle = Entrez.esearch(db="gene", term=f"{locus_tag}[Gene] AND {organism_name}[Organism]", retmode="xml")
         record = Entrez.read(handle)
         handle.close()
         
