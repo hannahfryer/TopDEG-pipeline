@@ -59,8 +59,8 @@ The following file will be generated:
 
 ---
 
-#### **2. DEG Analysis and Gene Information Retrieval**
-### Setting the Organism Name
+### **2. DEG Analysis and Gene Information Retrieval**
+#### Setting the Organism Name
 
 Before running the script, make sure to update the `organism_name` variable to match the organism in your dataset. 
 
@@ -77,12 +77,6 @@ organism_name = "Arabidopsis thaliana"  # For Arabidopsis
 organism_name = "Homo sapiens"          # For humans
 ```
 
-This variable is located near the top of the script. Make sure it matches your dataset for accurate results.
-
----
-
-This is concise and covers the essential information without being overwhelming!n significant_gene_info_retrieval.py --input significant_genes.csv
-```
 #### Output
 The following files will be generated:
 - **`top_100_genes.csv`**: A ranked list of the top 100 genes by log2 fold change.
