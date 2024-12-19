@@ -66,11 +66,12 @@ Run the script with the significant genes file (`significant_genes.csv`) as inpu
 ```bash
 python significant_gene_info_retrieval.py --input significant_genes.csv
 ```
-
 #### Output
 The following files will be generated:
 - **`top_100_genes.csv`**: A ranked list of the top 100 genes by log2 fold change.
 - **`top_100_gene_details.csv`**: Detailed metadata for the top 100 genes retrieved from the NCBI Gene database.
+### Notes
+- Replace 'organism_name' with diferent organism if using other database
 
 ---
 
