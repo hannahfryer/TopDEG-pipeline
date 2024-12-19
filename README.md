@@ -37,7 +37,7 @@ pip install pandas plotly numpy biopython beautifulsoup4 requests
 
 ### Input
 
-If you are not using the sample data provided in this repository, ensure your input CSV file (`DEG_results.csv`) is correctly formatted with the following columns:
+This pipeline assumes the input of a file called `DEG_results.csv`, which is included in this repository. If you are not using the sample data provided, ensure your input CSV file is named `DEG_results.csv` is correctly formatted with the following columns:
 
 - **`gene`**: Gene identifiers (e.g., gene names or locus tags).  
 - **`log2FoldChange`**: Log2-transformed fold-change values indicating the magnitude and direction of differential expression.  
