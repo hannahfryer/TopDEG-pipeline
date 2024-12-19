@@ -46,7 +46,7 @@ This pipeline assumes the input of a file called `DEG_results.csv`, which is inc
 
 ### 1. DEG Analysis and Interactive Volcano Plot
 
-### Adjusting the Significance Threshold
+#### Adjusting the Significance Threshold
 
 To tailor the analysis to your specific needs, you can adjust the adjusted p-value significance threshold (`padj_threshold`) in the script. This enables you to set a more or less stringent cutoff based on the requirements of your study. 
 
@@ -58,7 +58,7 @@ padj_threshold = 0.05
 
 To change this, open `interactive_volcano_plot.py` and locate the line above. Update the value as needed before running the script.
 
-### Running the Script
+#### Running the Script
 
 The script generates an interactive volcano plot using `DEG_results.csv` as input. To execute it, use the following command:
 
@@ -96,7 +96,7 @@ The following files will be generated:
 - **`top_100_gene_details.csv`**: Detailed metadata for the top 100 genes retrieved from the NCBI Gene database.
 
 ### **3. KEGG KO Assignment Checker**
-### Setting organism prefix
+#### Setting organism prefix
 If not using the sample data, ensure you update the `"prefix"`  variable directly to match the organism in your dataset before running the script. Open `kegg_ko_checker.py` and locate the following line, which is set to this default:
 
 ```
