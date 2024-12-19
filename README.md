@@ -49,7 +49,7 @@ If you are not using the sample data provided in this repository, ensure your in
 #### Running the Script
 Run the script with your DEG results file (`DEG_results.csv`) as input:
 ```bash
-python volcano_plot.py --input DEG_results.csv
+python interactive_volcano_plot.py --input DEG_results.csv
 ```
 
 #### Output
