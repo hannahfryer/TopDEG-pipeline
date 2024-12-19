@@ -61,7 +61,7 @@ To adjust the threshold, modify the value in the script before running the analy
 #### Running the Script
 Run the script with your DEG results file (`DEG_results.csv`) as input:
 ```bash
-python interactive_volcano_plot.py --input DEG_results.csv
+python interactive_volcano_plot.py 
 ```
 
 #### Output
@@ -91,7 +91,7 @@ organism_name = "Homo sapiens"          # For humans
 #### Running the Script
 Run the script with your DEG results file (`DEG_results.csv`) as input:
 ```bash
-python significant_gene_info_retrieval.py --input significant_genes.csv
+python significant_gene_info_retrieval.py 
 ```
 #### Output
 The following files will be generated:
@@ -103,7 +103,7 @@ The following files will be generated:
 #### Running the Script
 Run the script with the gene details file (`top_100_gene_details.csv`) as input:
 ```bash
-python kegg_ko_checker.py --input top_100_gene_details.csv
+python kegg_ko_checker.py 
 ```
 
 #### Output
