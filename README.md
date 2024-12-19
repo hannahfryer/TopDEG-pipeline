@@ -1,6 +1,6 @@
 ## DEGExplorer: : Visualising and Annotating Top Genes
 
-This repository contains scripts for analyzing differential gene expression (DEG) data, identifying significant genes, and annotating genes using external databases such as NCBI and KEGG. The scripts are designed to streamline the analysis and provide interactive visualization options, ranked gene lists, and functional annotations
+This repository contains scripts for analyzing differential gene expression (DEG) data, identifying significant genes, and annotating genes using external databases such as NCBI and KEGG. The scripts are designed to streamline the analysis and provide interactive visualization options, ranked gene lists, and functional annotations.  
 
 ## Repository Overview
 Scripts:
@@ -9,7 +9,7 @@ Processes DESeq2 results to identify significant genes based on adjusted p-value
 Saves significant genes to a CSV file and creates an interactive volcano plot for visualization.
 
 2. significant_gene_info_retrieval.py:
-Processes DESeq2 results to rank genes by log2 fold change. Extracts the top 100 significant genes and queries the NCBI Gene database for Pisum sativum (pea) to retrieve gene details such as description, protein information, and functional annotations. Saves results to a new CSV file.
+Ranks genes by log2 fold change. Extracts the top 100 significant genes and queries the NCBI Gene database for Pisum sativum (pea) to retrieve gene details such as description, protein information, and functional annotations. Saves results to a new CSV file.
 
 3. kegg_ko_checker.py:
 Queries the KEGG database to check if gene IDs have KEGG Orthology (KO) assignments.
@@ -37,7 +37,7 @@ pip install pandas plotly numpy biopython beautifulsoup4 requests
 
 ### Input
 
-This pipeline assumes the input of a file called `DEG_results.csv`, which is included in this repository. If you are not using the sample data provided, ensure your input CSV file is named `DEG_results.csv` is correctly formatted with the following columns:
+This pipeline assumes the input of a file called `DEG_results.csv`, which is included in this repository. If you are not using the sample data provided, ensure your input CSV file is named `DEG_results.csv` and is correctly formatted with the following columns:
 
 - **`gene`**: Gene identifiers (e.g., gene names or locus tags).  
 - **`log2FoldChange`**: Log2-transformed fold-change values indicating the magnitude and direction of differential expression.  
@@ -46,31 +46,30 @@ This pipeline assumes the input of a file called `DEG_results.csv`, which is inc
 
 ### 1. DEG Analysis and Interactive Volcano Plot
 
-#### Adjusting Significance Threshold
+### Adjusting the Significance Threshold
 
+To tailor the analysis to your specific needs, you can adjust the adjusted p-value significance threshold (`padj_threshold`) in the script. This enables you to set a more or less stringent cutoff based on the requirements of your study. 
 
-Before running the script, you can customize the adjusted p-value significance threshold (`padj_threshold`) to suit your analysis needs. This allows you to make the threshold more or less stringent depending on the specific requirements of your study. 
+By default, the threshold is set to:
 
-Open the interactive_volcano_plot.py and locate the following line. By default, the threshold is set to:
-
-```
+```python
 padj_threshold = 0.05
 ```
 
-To adjust the threshold, modify the value in the script before running the analysis.
+To change this, open `interactive_volcano_plot.py` and locate the line above. Update the value as needed before running the script.
 
-#### Running the Script
-The script uses '`DEG_results.csv` automatically as input:
+### Running the Script
+
+The script generates an interactive volcano plot using `DEG_results.csv` as input. To execute it, use the following command:
+
 ```bash
-python interactive_volcano_plot.py 
+python interactive_volcano_plot.py
 ```
 
 #### Output
 The following file will be generated:
 - **`volcano_plot.html`**: An interactive volcano plot visualizing the differential expression results.
 - **`significant_genes.csv`**: A list of significant genes filtered based on the specified thresholds.
-
----
 
 ### **2. DEG Analysis and Gene Information Retrieval**
 #### Setting the Organism Name
