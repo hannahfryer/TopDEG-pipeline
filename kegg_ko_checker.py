@@ -15,9 +15,10 @@ import pandas as pd  # For reading and processing data in structured format
 import csv  # For writing results to a CSV file
 import re  # For using regular expressions to identify KEGG Orthology (KO) patterns
 
-# ------------------------ Function Definitions ------------------------
-import re  # Import regular expressions for pattern matching
+# ------------------------ Define name of organism ------------------------
+prefix = "psat"  # Replace "psat" with the desired prefix for the organism
 
+# ------------------------ Function Definitions ------------------------
 def check_kegg_ko(gene_id):
     """
     Query KEGG to check if a specific Gene ID has a KO (KEGG Orthology) assigned.
@@ -29,7 +30,7 @@ def check_kegg_ko(gene_id):
         str: KO value(s) if found, "No KO assigned" if explicitly stated, or an error message.
     """
     # Construct the KEGG URL
-    url = f"https://www.genome.jp/entry/psat:{gene_id}"
+    url = f"https://www.genome.jp/entry/{prefix}:{gene_id}"
     
     try:
         # Send a GET request to retrieve the KEGG page
