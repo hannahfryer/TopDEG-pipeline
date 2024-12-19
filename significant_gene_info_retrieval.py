@@ -15,6 +15,10 @@
 import pandas as pd  # For reading and processing data in structured format
 from Bio import Entrez # Importing Entrez module from Biopython for accessing NCBI databases
 
+# -------------------------- Define organism name --------------------------
+# Change to different organism if using different dataset
+organism_name = "Pisum sativum" 
+
 # -------------------- Function Definition --------------------
 def search_gene_details(locus_tag, organism_name):
     """
@@ -112,8 +116,6 @@ gene_details = []
 
 # -------------------- Fetch Gene Details --------------------
 # Loop through each gene (locus tag) in the top 100 list
-# Define the organism name
-organism_name = "Pisum sativum" # Change to different organism if using different dataset
 for locus_tag in top_100_genes['gene']:
     # Fetch gene information using the 'search_pisum_sativum' function
     gene_info = search_gene_details(locus_tag, organism_name)
