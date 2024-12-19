@@ -48,12 +48,12 @@ If you are not using the sample data provided in this repository, ensure your in
 
 #### Adjusting significance threshold
 
-Before running the script, you can edit the significance thresholds of... to make more or less stringent depending on your analysis 
+Before running the script, you can edit the adjusted p-value significance thresholds to be more or less stringent depending on your analysis 
 
 By default, it is set to:
 
 ```python
-organism_name = "Pisum sativum"
+padj_threshold = 0.05 
 ```
 
 #### Running the Script
