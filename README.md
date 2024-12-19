@@ -62,18 +62,32 @@ The following file will be generated:
 ### **2. DEG Analysis and Gene Information Retrieval**
 ## Setting the Organism Name
 
-Before running the script, make sure to specify the organism name that matches your dataset. This is done by updating the `organism_name` variable in the script.
+Here’s a simpler version for the GitHub README:
 
-### Default Value
-By default, the `organism_name` is set to:
+---
+
+### Changing the Organism Name
+
+Before running the script, make sure to update the `organism_name` variable to match the organism in your dataset. 
+
+By default, it is set to:
 
 ```python
 organism_name = "Pisum sativum"
+```
 
-#### Running the Script
-Run the script with the significant genes file (`significant_genes.csv`) as input:
-```bash
-python significant_gene_info_retrieval.py --input significant_genes.csv
+If you're using a different organism, replace `"Pisum sativum"` with the scientific name of your organism. For example:
+
+```python
+organism_name = "Arabidopsis thaliana"  # For Arabidopsis
+organism_name = "Homo sapiens"          # For humans
+```
+
+This variable is located near the top of the script. Make sure it matches your dataset for accurate results.
+
+---
+
+This is concise and covers the essential information without being overwhelming!n significant_gene_info_retrieval.py --input significant_genes.csv
 ```
 #### Output
 The following files will be generated:
