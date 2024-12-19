@@ -127,6 +127,7 @@ The following file will be generated:
 ### Notes
 - If not using sample data, ensure your input file is name `"DEG_results.csv"` and is formatted correctly, containing the necessary columns required by the scripts.
 - For organism-specific scripts, double-check that variables `"prefix"`and `"organism_name"` match your dataset.
+- Pipeline should be carried out in the order stated above
 
 ## Limitations
 - The KEGG search may not return KO terms for all genes.
