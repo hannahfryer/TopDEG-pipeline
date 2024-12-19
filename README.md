@@ -63,8 +63,7 @@ padj_threshold = 0.05
 To change this, open `interactive_volcano_plot.py` and locate the line above. Update the value as needed before running the script.
 
 #### Running the Script
-
-The script generates an interactive volcano plot using `DEG_results.csv` as input. To execute it, use the following command:
+To execute use the following command:
 
 ```bash
 python interactive_volcano_plot.py
@@ -91,6 +90,7 @@ organism_name = "Arabidopsis thaliana"  # For Arabidopsis
 organism_name = "Homo sapiens"          # For humans
 ```
 #### Running the Script
+To execute use the following command:
 ```bash
 python significant_gene_info_retrieval.py 
 ```
@@ -113,6 +113,7 @@ prefix = "hsa"  # For humans
 ```
 
 #### Running the Script
+To execute use the following command:
 ```bash
 python kegg_ko_checker.py 
 ```
