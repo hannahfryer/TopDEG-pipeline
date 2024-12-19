@@ -108,7 +108,6 @@ prefix = "hsa"  # For humans
 ```
 
 #### Running the Script
-Run the script with the gene details file (`top_100_gene_details.csv`) as input:
 ```bash
 python kegg_ko_checker.py 
 ```
