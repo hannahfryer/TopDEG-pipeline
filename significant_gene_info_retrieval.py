@@ -112,6 +112,8 @@ gene_details = []
 
 # -------------------- Fetch Gene Details --------------------
 # Loop through each gene (locus tag) in the top 100 list
+# Define the organism name
+organism_name = "Pisum sativum" # Change to different organism if using different dataset
 for locus_tag in top_100_genes['gene']:
     # Fetch gene information using the 'search_pisum_sativum' function
     gene_info = search_gene_details(locus_tag, organism_name)
