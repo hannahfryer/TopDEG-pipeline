@@ -48,6 +48,7 @@ If you are not using the sample data provided in this repository, ensure your in
 
 #### Adjusting Significance Threshold
 
+
 Before running the script, you can customize the adjusted p-value significance threshold (`padj_threshold`) to suit your analysis needs. This allows you to make the threshold more or less stringent depending on the specific requirements of your study.
 
 By default, the threshold is set to:
@@ -99,7 +100,8 @@ The following files will be generated:
 - **`top_100_gene_details.csv`**: Detailed metadata for the top 100 genes retrieved from the NCBI Gene database.
 
 ### **3. KEGG KO Assignment Checker**
-Before running the script, make sure to update the `prefix` variable to match the organism in your dataset. 
+If not using the sample data, before running the script, make sure to update the 'prefix' variable directly to match the organism in your dataset. Open `interactive_volcano_plot.py` and locate the following line which is set to default:
+
 ```
 prefix = "psat"
 ```
