@@ -44,12 +44,6 @@ If you are not using the sample data provided in this repository, ensure your in
 - **`pvalue`**: Raw p-values representing the statistical significance of the differential expression.  
 - **`padj`**: Adjusted p-values  
 
-### **1. DEG Analysis and Interactive Volcano Plot**
-
-Yes, this is a good addition to the README file, as it provides clarity about a key parameter in your analysis. However, it could be improved slightly for readability and completeness. Here's a more polished version:
-
----
-
 ### 1. DEG Analysis and Interactive Volcano Plot
 
 #### Adjusting Significance Threshold
