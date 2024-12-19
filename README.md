@@ -74,7 +74,7 @@ The following file will be generated:
 ### **2. DEG Analysis and Gene Information Retrieval**
 #### Setting the Organism Name
 
-If not using the sample data, before running the script, make sure to update the 'prefix' variable directly to match the organism in your dataset. Open kegg_ko_checker` and locate the following line which is set to this default:
+If not using the sample data, ensure you update the `"organism_name"`  variable directly to match the organism in your dataset before running the script. Open `significant_gene_info_retrieval.py` and locate the following line, which is set to this default:
 
 ```python
 organism_name = "Pisum sativum"
@@ -96,7 +96,7 @@ The following files will be generated:
 - **`top_100_gene_details.csv`**: Detailed metadata for the top 100 genes retrieved from the NCBI Gene database.
 
 ### **3. KEGG KO Assignment Checker**
-If not using the sample data, before running the script, make sure to update the 'prefix' variable directly to match the organism in your dataset. Open kegg_ko_checker` and locate the following line which is set to this default:
+If not using the sample data, ensure you update the `"prefix"`  variable directly to match the organism in your dataset before running the script. Open `kegg_ko_checker.py` and locate the following line, which is set to this default:
 
 ```
 prefix = "psat"
