@@ -1,7 +1,20 @@
+# ---------------------------------------------------------------
+# Script: DEG Analysis and Gene Information Retrieval
+# Description: 
+# - Processes DESeq2 results to rank genes by Log2 Fold Change.
+# - Identifies the top 100 significant genes for further analysis.
+# - Retrieves gene details for Pisum sativum (pea) from the NCBI Gene database.
+# - Saves processed results and gene information to CSV files.
+# ---------------------------------------------------------------
+
+
+# -------------------------- Library Imports --------------------------
+# Install necessary libraries (if not already installed)
+# pip install pandas plotly numpy 
+
+import pandas as pd  # For reading and processing data in structured format
+
 # ------------------- Ranking Genes Based on Log Fold Change -------------------
-
-import pandas as pd
-
 # Load CSV fule into a DataFrame
 csv_file_path = "significant_genes.csv"  # Replace with your file path and/or adjust name of input file
 data = pd.read_csv(csv_file_path)
@@ -36,7 +49,7 @@ print("Top 100 genes saved to 'top_100_genes.csv")
 Entrez.email = "your-email@example.com"
 
 # -------------------- Function Definition --------------------
-def search_pisum_sativum(locus_tag):
+def search_gene_details(locus_tag):
     """
     Search for gene details of a specific locus tag in the NCBI Gene database 
     for Pisum sativum (pea) and extract relevant gene information.
@@ -99,9 +112,9 @@ gene_details = []
 
 # -------------------- Fetch Gene Details --------------------
 # Loop through each gene (locus tag) in the top 100 list
-for gene_ID in top_100_genes['Gene ID']:
+for locus_tag in top_100_genes['gene']:
     # Fetch gene information using the 'search_pisum_sativum' function
-    gene_info = search_pisum_sativum(locus_tag)
+    gene_info = search_gene_details(locus_tag)
     
     # Check if valid gene information was returned
     if isinstance(gene_info, dict):
