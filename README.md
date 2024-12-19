@@ -125,7 +125,7 @@ The following file will be generated:
 ---
 
 ### Notes
-- If not using sample data, ensure your input files ( DEG_results.csv) is formatted correctly and contain the necessary columns required by the scripts.
+- If not using sample data, ensure your input file is name `"DEG_results.csv"` and is formatted correctly, containing the necessary columns required by the scripts.
 - For organism-specific scripts, double-check that variables `"prefix"`and `"organism_name"` match your dataset.
 
 ## Limitations
