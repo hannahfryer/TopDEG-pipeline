@@ -46,33 +46,58 @@ If you are not using the sample data provided in this repository, ensure your in
 
 
 
-### Running the Script
-Run the script with the DEG results file as input:
+Here's an updated version of the "Running the Script" and "Output" section for each script in the repository, tailored to their specific functionalities:
+
+---
+
+### **1. DEG Analysis and Interactive Volcano Plot**
+
+#### Running the Script
+Run the script with your DEG results file (`DEG_results.csv`) as input:
 ```bash
-python DEGExplorer.py --input DEG_results.csv
+python volcano_plot.py --input DEG_results.csv
 ```
 
-### Output
+#### Output
+The following file will be generated:
+- **`volcano_plot.html`**: An interactive volcano plot visualizing the differential expression results.
+- **`significant_genes.csv`**: A list of significant genes filtered based on the specified thresholds.
+
+---
+
+### **2. DEG Analysis and Gene Information Retrieval**
+
+#### Running the Script
+Run the script with the significant genes file (`significant_genes.csv`) as input:
+```bash
+python gene_info_retrieval.py --input significant_genes.csv
+```
+
+#### Output
 The following files will be generated:
-- `volcano_plot.html`: Interactive volcano plot.
-- `top_100_degs.csv`: Top 100 DEGs by log2 fold change.
-- `top_100_gene_ids.csv`: Gene IDs and metadata from NCBI.
-- `kegg_results.csv`: KEGG Orthology search results.
+- **`top_100_genes.csv`**: A ranked list of the top 100 genes by log2 fold change.
+- **`top_100_gene_details.csv`**: Detailed metadata for the top 100 genes retrieved from the NCBI Gene database.
 
-## Example
+---
 
-1. Run the pipeline:
-   ```bash
-   python TopDEG-pipeline.py 
-   ```
+### **3. KEGG KO Assignment Checker**
 
-2. Outputs:
-   - `volcano_plot.html`
-   - `top_100_degs.csv`
-   - `top_100_gene_ids.csv`
-   - `kegg_results.csv`
+#### Running the Script
+Run the script with the gene details file (`top_100_gene_details.csv`) as input:
+```bash
+python kegg_ko_checker.py --input top_100_gene_details.csv
+```
 
+#### Output
+The following file will be generated:
+- **`gene_ko_results.csv`**: A file containing KEGG Orthology (KO) information for each gene.
 
+---
+
+### Notes
+- Replace `--input <file>` with the appropriate file path if your data files are located elsewhere.
+- Ensure your input files are correctly formatted and match the expected structure for each script.  
+- Adjust thresholds and parameters in the scripts to fit your analysis needs.
 
 ## Limitations
 - The KEGG search may not return KO terms for all genes.
