@@ -8,9 +8,9 @@
 # Install necessary libraries (if not already installed)
 # pip install pandas plotly numpy 
 
-import pandas as pd
-import numpy as np
-import plotly.express as px
+import pandas as pd  # For data manipulation and analysis
+import numpy as np  # For numerical computations and data processing
+import plotly.express as px  # For creating interactive plots
 
 # -------------------------- Data Loading ----------------------------
 
