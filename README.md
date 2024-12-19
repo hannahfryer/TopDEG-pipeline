@@ -11,7 +11,7 @@ Saves significant genes to a CSV file and creates an interactive volcano plot fo
 2. significant_gene_info_retrieval.py:
 Processes DESeq2 results to rank genes by log2 fold change. Extracts the top 100 significant genes and queries the NCBI Gene database for Pisum sativum (pea) to retrieve gene details such as description, protein information, and functional annotations. Saves results to a new CSV file.
 
-3. KEGG_retriever.py:
+3. kegg_ko_checker.py:
 Queries the KEGG database to check if gene IDs have KEGG Orthology (KO) assignments.
 Reads gene IDs from a CSV file, retrieves KO information, and saves the results to a new CSV file.
 
