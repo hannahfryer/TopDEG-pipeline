@@ -101,5 +101,8 @@ fig.add_shape(
     line=dict(color="black", dash="dot"),
 )
 
-# Display the interactive plot
-fig.show()
+# Save the interactive plot to an HTML file
+output_plot_file = "volcano_plot.html"
+fig.write_html(output_plot_file)
+print(f"Interactive volcano plot saved to '{output_plot_file}'.")
+
